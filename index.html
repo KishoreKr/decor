@@ -81,39 +81,40 @@
 
         // Create the chart
         Highcharts.stockChart('container', {
-            rangeSelector: {
-                selected: 1
-            },
+            // rangeSelector: {
+            //     selected: 1
+            // },
 
-            title: {
-                text: 'AAPL Stock Price'
-            },
+            // title: {
+            //     text: 'AAPL Stock Price'
+            // },
 
-            plotOptions: {
-                series: {
-                    color: "#5baff6",
-                    marker: {
-                        fillColor: '#444',
-                        lineWidth: 1,
-                        lineColor: '#444' // inherit from series
-                    },
-                },
-                spline: {
-                    marker: {
-                        enabled: true
-                    }
-                },
+            // plotOptions: {
+            //     series: {
+            //         color: "#5baff6",
+            //         marker: {
+            //             fillColor: '#444',
+            //             lineWidth: 1,
+            //             enabled: false,
+            //             lineColor: '#444' // inherit from series
+            //         },
+            //     },
+            //     spline: {
+            //         marker: {
+            //             enabled: false
+            //         }
+            //     },
 
-                dataGrouping: {
-                    smoothed: true
-                },
+            //     dataGrouping: {
+            //         smoothed: true
+            //     },
 
-                // chartOptions:{
-                    rangeSelector:{
-                        enabled:false
-                    }
-                // }
-            },
+            //     // // chartOptions:{
+            //     //     rangeSelector:{
+            //     //         enabled:false
+            //     //     }
+            //     // // }
+            // },
 
             yAxis: {
                 labels:{enabled: false},
@@ -124,15 +125,22 @@
 
             series: [{
                 name: 'AAPL Stock Price',
+                type: 'spline',
                 data: data,
                 marker: {
-                    enabled: true,
-                    radius: 3
+                    enabled: false//,
+                    // radius: 3
                 },
                 tooltip: {
                     valueDecimals: 2
                 }
             }],
+
+            spline: {
+                marker: {
+                    enabled: false
+                }
+            },
 
             buttons: [{
                 type: 'month',
